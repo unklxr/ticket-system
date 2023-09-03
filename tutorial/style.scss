@@ -1,0 +1,213 @@
+$font: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+$font-size: 16px;
+$background-color: #FFFFFF;
+* {
+	box-sizing: border-box;
+	font-family: $font;
+    font-size: $font-size;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: $background-color;
+	margin: 0;
+}
+$navtop-background-color: #3f69a8;
+.navtop {
+	background-color: $navtop-background-color;
+	height: 60px;
+	width: 100%;
+	border: 0;
+	div {
+		display: flex;
+		margin: 0 auto;
+		width: 1000px;
+		height: 100%;
+		h1, a {
+			display: inline-flex;
+			align-items: center;
+		}
+		h1 {
+			flex: 1;
+			font-size: 24px;
+			padding: 0;
+			margin: 0;
+			color: mix(#fff, $navtop-background-color, 90);
+			font-weight: normal;
+		}
+		a {
+			padding: 0 20px;
+			text-decoration: none;
+			color: mix(#fff, $navtop-background-color, 70);
+			font-weight: bold;
+			i {
+				padding: 2px 8px 0 0;
+			}
+			&:hover {
+				color: mix(#fff, $navtop-background-color, 90);
+			}
+		}
+	}
+}
+.content {
+	width: 1000px;
+	margin: 0 auto;
+	h2 {
+		margin: 0;
+		padding: 25px 0;
+		font-size: 22px;
+		border-bottom: 1px solid mix(#000, $background-color, 8);
+		color: darken($background-color, 60);
+	}
+}
+.btns {
+	display: flex;
+	.btn {
+		display: inline-block;
+		text-decoration: none;
+		background-color: #38b673;
+		font-weight: bold;
+		font-size: 14px;
+		border-radius: 5px;
+		color: #FFFFFF;
+		padding: 10px 15px;
+		margin: 15px 10px 15px 0;
+		&:hover {
+			background-color: darken(#38b673, 5);
+		}
+		&.red {
+			background-color: #b63838;
+			&:hover {
+				background-color: darken(#b63838, 5);
+			}
+		}
+	}
+}
+.home {
+	.tickets-list {
+		display: flex;
+		flex-flow: column;
+		.ticket {
+			padding: 15px 0;
+			width: 100%;
+			border-bottom: 1px solid mix(#000, $background-color, 8);
+			display: flex;
+			text-decoration: none;
+			.con {
+				display: flex;
+				justify-content: center;
+				flex-flow: column;
+			}
+			i {
+				text-align: center;
+				width: 80px;
+				color: mix(#000, $background-color, 30);
+			}
+			.title {
+				font-weight: 600;
+				color: darken($background-color, 60);
+			}
+			.msg {
+				overflow: hidden;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+				max-width: 400px;
+				color: mix(#000, $background-color, 40);
+				font-size: 14px;
+			}
+			.created {
+				flex-grow: 1;
+				align-items: flex-end;
+				color: mix(#000, $background-color, 40);
+				font-size: 14px;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+			&:hover {
+				background-color: mix(#000, $background-color, 1);
+			}
+		}
+	}
+}
+.view {
+	h2 {
+		.open, .resolved {
+			color: #38b673;
+		}
+		.closed {
+			color: #b63838;
+		}
+	}
+	.ticket {
+		padding: 20px 0;
+		.created {
+			color: mix(#000, $background-color, 50);
+		}
+	}
+	.comments {
+		margin-top: 15px;
+		border-top: 1px solid mix(#000, $background-color, 8);
+		padding: 25px 0;
+		.comment {
+			display: flex;
+			padding-bottom: 5px;
+			div {
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				width: 70px;
+				color: mix(#000, $background-color, 10);
+				transform: scaleX(-1);
+			}
+			p {
+				margin: 0 0 20px 0;
+				span {
+					display: flex;
+					font-size: 14px;
+					padding-bottom: 5px;
+					color: mix(#000, $background-color, 50);
+				}
+			}
+		}
+	}
+}
+.create, .view {
+	form {
+		padding: 15px 0;
+		display: flex;
+		flex-flow: column;
+		width: 400px;
+		label {
+			display: inline-flex;
+			width: 100%;
+			padding: 10px 0;
+			margin-right: 25px;
+		}
+		input, textarea {
+			padding: 10px;
+			width: 100%;
+			margin-right: 25px;
+			margin-bottom: 15px;
+			border: 1px solid mix(#000, $background-color, 20);
+		}
+		textarea {
+			height: 200px;
+		}
+		input[type="submit"] {
+			display: block;
+			background-color: #38b673;
+			border: 0;
+			font-weight: bold;
+			font-size: 14px;
+			color: #FFFFFF;
+			cursor: pointer;
+			width: 200px;
+			margin-top: 15px;
+			border-radius: 5px;
+			&:hover {
+				background-color: darken(#38b673, 5);
+			}
+		}
+	}
+}
